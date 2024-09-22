@@ -3,6 +3,7 @@ from .models import Book, Student, Borrow  # Ensure Borrow is imported
 from .forms import BookForm, StudentForm
 
 def home(request):
+    print("Home view called")
     return render(request, 'library/home.html')
 
 def book_list(request):

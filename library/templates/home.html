@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Library Management System</title>
+    <title>Welcome to the Library Management System</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
 </head>
 <body>
-    <h1>Welcome to the Library Management System</h1>
-    <a href="{% url 'book_list' %}">View Books</a><br>
-    <a href="{% url 'student_list' %}">View Students</a>
+    <h1>Welcome to the Avantik Library Management System</h1>
 </body>
 </html>

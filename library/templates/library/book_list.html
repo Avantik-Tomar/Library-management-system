@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Book List</title>
-</head>
-<body>
+<div class="container">
     <h1>Book List</h1>
-    <a href="{% url 'add_book' %}">Add Book</a>
-    <ul>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published Date</th>
+            <th>ISBN</th>
+            <th>Available Copies</th>
+        </tr>
         {% for book in books %}
-            <li>{{ book.title }} by {{ book.author }} ({{ book.available_copies }} copies available)</li>
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.published_date }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.available_copies }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </table>
+</div>
