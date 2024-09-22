@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrow Book</title>
+</head>
+<body>
+    <h1>Borrow a Book</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="student">Select Student:</label>
+        <select name="student_id">
+            {% for student in students %}
+                <option value="{{ student.id }}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="book">Select Book:</label>
+        <select name="book_id">
+            {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit">Borrow</button>
+    </form>
+    <a href="{% url 'book_list' %}">Back to Book List</a>
+</body>
+</html>
